@@ -1,0 +1,282 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Wichita";
+    font-weight: 400;
+    src: url("../fonts/Wichita/Wichita.otf");
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+p {
+    margin: 0;
+}
+
+.logo {
+    background: url("../img/logo.png") center center/100% no-repeat transparent;
+    max-width: 270px;
+    max-height: 147px;
+    height: 147px;
+    width: 270px;
+    display: block;
+    text-decoration: none;
+    font-size: 0;
+}
+
+.grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: inherit;
+    max-width: 1280px;
+    width: 100%;
+
+    &__item {
+        flex: 1 auto;
+    }
+}
+
+.btn {
+    border: 0;
+    background: #a7b12d;
+    position: relative;
+    cursor: pointer;
+
+    &__text {
+        color: #fff;
+        font-size: 16px;
+    }
+
+    &--transform {
+        background: transparent;
+        margin: 0 20px;
+
+        .btn__text {
+            position: relative;
+            z-index: 1;
+            color: #000;
+        }
+
+        &::after {
+            content: "";
+            background: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 130%;
+            width: 200%;
+            z-index: 0;
+            transform-origin: 50% 50%;
+            perspective-origin: center center;
+            transform: perspective(500px) rotateY(-30deg) skewX(0) translate(-50%, -50%);
+        }
+    }
+}
+
+// HEADER
+.header-container {
+    background: #919b21;
+    color: #fff;
+    width: 100%;
+}
+
+.header {
+    min-height: 241px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+
+    &__link {
+        color: #fff;
+        text-decoration: none;
+
+        &--tel {
+            margin-right: 20px;
+            &:last-child {
+                margin: 0;
+            }
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__address {
+        margin: 16px 0;
+    }
+
+    &__top {
+        flex: 0 166px;
+        min-height: 166px;
+        height: 166px;
+        width: 100%;
+    }
+
+    &__bottom {
+        flex: 0 74px;
+        min-height: 74px;
+        height: 74px;
+        width: 100%;
+        background: #a7b12d;
+        border-bottom: 2px solid #919b21;
+    }
+
+    &-nav {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-content: center;
+        align-items: center;
+        margin: 0 auto;
+        height: 100%;
+        max-width: 1280px;
+        list-style: none;
+        padding: 0;
+        width: 100%;
+
+        &__item {
+            position: relative;
+            flex: 1 auto;
+            text-align: center;
+
+            &::after {
+                display: none;
+                content: "";
+                background: #BEC941;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                height: 130%;
+                width: 82%;
+                z-index: 0;
+                transform-origin: 50% 0%;
+                perspective-origin: center center;
+                transform: translate(-50%, -50%);
+            }
+
+            // четные
+            &:nth-child(odd)::after {
+                transform: perspective(550px) rotateY(-23deg) skewX(17deg) translate(-60%, -50%);
+            }
+
+            // нечетные
+            &:nth-child(even)::after {
+                transform: perspective(550px) rotateY(43deg) skewX(-21deg) translate(-50%, -50%);
+            }
+
+            // четные
+            &:hover:nth-child(even)::after {
+                display: block;
+            }
+
+            // нечетные
+            &:hover:nth-child(odd)::after {
+                display: block;
+            }
+        }
+
+        &__link {
+            text-align: center;
+            display: block;
+            height: inherit;
+            width: inherit;
+            color: #fff;
+            position: relative;
+            text-decoration: none;
+            font-size: 25px;
+            font-family: "Wichita";
+            text-transform: uppercase;
+            z-index: 1;
+            outline: none;
+
+            &:focus {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// FOOTER
+.footer {
+    background: #3d3d3d;
+    min-height: 86px;
+    height: 86px;
+    color: #fff;
+}
+
+.social-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+
+    &__item {
+        flex: 0 0 41px;
+        margin-left: 20px;
+    }
+
+    &__link {
+        color: #fff;
+        display: inline-block;
+        height: 41px;
+        width: 41px;
+        border-radius: 50%;
+        border: 1px solid #bec941;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50%;
+
+        // TODO: Пересмотреть возможность наведения в другой вид
+        &--vk {
+            background-image: url("../img/icons/social.svg#vk");
+
+            &:hover,
+            &:focus {
+                background-color: #bec941;
+                background-image: url("../img/icons/social.svg#vk-white");
+            }
+        }
+
+        &--fb {
+            background-image: url("../img/icons/social.svg#fb");
+
+            &:hover,
+            &:focus {
+                background-color: #bec941;
+                background-image: url("../img/icons/social.svg#fb-white");
+            }
+        }
+
+        &--instagram {
+            background-image: url("../img/icons/social.svg#instagram");
+
+            &:hover,
+            &:focus {
+                background-color: #bec941;
+                background-image: url("../img/icons/social.svg#instagram-white");
+            }
+        }
+    }
+}
