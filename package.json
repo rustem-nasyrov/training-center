@@ -1,0 +1,33 @@
+{
+  "name": "training-center",
+  "version": "0.0.1",
+  "description": "PSDtoHTML",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp build",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rustem-nasyrov/training-center.git"
+  },
+  "author": "Rustem Nasyrov",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/rustem-nasyrov/training-center/issues"
+  },
+  "homepage": "https://github.com/rustem-nasyrov/training-center#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-imagemin": "^6.1.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "node-sass": "^4.13.0"
+  }
+}
