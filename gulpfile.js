@@ -40,7 +40,7 @@ const css = cb => {
     return src(path.src.css)
         .pipe(sourcemaps.init())
         .pipe(sass({
-            outputStyle: 'expanded',
+            outputStyle: 'compressed',
         }).on('error', (error) => cb(error.message)))
         .pipe(autoprefixer({
             cascade: false,
