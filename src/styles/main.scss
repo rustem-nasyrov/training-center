@@ -1,3 +1,9 @@
+@import "./bootstrap-grid.min.scss";
+
+.container {
+    max-width: 1280px;
+}
+
 *,
 *::before,
 *::after {
@@ -12,8 +18,14 @@
 
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
+}
+
+a,
+p,
+button {
+    font-family: 'Open Sans', sans-serif;
 }
 
 p {
@@ -58,28 +70,119 @@ p {
         font-size: 16px;
     }
 
-    &--transform {
-        background: transparent;
+    &--login {
         margin: 0 20px;
+        padding: 21px 28px 12px 34px;
+        background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjUwIiB2aWV3Qm94PSIwIDAgMjUwIDUwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyLjA4OSA5TDIzNSAwLjc1TDI1MCA1MEgwLjkyNjAyNUwxMi4wODkgOVoiIGZpbGw9IiNGMUYxRjEiLz4KPC9zdmc+Cg==") center center/contain no-repeat transparent;
 
         .btn__text {
             position: relative;
             z-index: 1;
             color: #000;
         }
+    }
+}
 
-        &::after {
-            content: "";
+// POPUP
+
+.auth-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    width: 330px;
+    padding: 27px;
+    height: 300px;
+    box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.07);
+
+    &-form {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        line-height: 1;
+
+        &__input {
+            flex: 0 auto;
+            width: 100%;
+
+            label {
+                display: block;
+                font: 400 14px/22px "Open Sans";
+                color: #6c6c6c;
+            }
+
+            label+input {
+                display: block;
+                border-width: 0 0 1px;
+                border-color: #d1d1d1;
+                border-style: solid;
+                width: 100%;
+                outline: none;
+                padding: 6px 0;
+                font: 400 16px/22px "Open Sans";
+
+                &:focus,
+                &:active {
+                    border-color: #bec941;
+                }
+            }
+        }
+
+        &__btn {
+            width: 100%;
+            flex: 0 40px;
             background: #fff;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            height: 130%;
-            width: 200%;
-            z-index: 0;
-            transform-origin: 50% 50%;
-            perspective-origin: center center;
-            transform: perspective(500px) rotateY(-30deg) skewX(0) translate(-50%, -50%);
+            border: 1px solid #bec941;
+            outline: none;
+            cursor: pointer;
+
+            &:hover,
+            &:focus,
+            &--active {
+                background: #bec941;
+                color: #fff;
+            }
+        }
+
+        label.auth-popup-form-cbox {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        &-cbox {
+
+            &__input {
+                display: none;
+
+                &:checked+.auth-popup-form-cbox__cbox {
+                    background: url("../img/check-symbol.png") center center/60% no-repeat #bec941;
+                }
+            }
+
+            &__cbox {
+                flex: 0 auto;
+                display: inline-block;
+                height: 16px;
+                width: 16px;
+                border: 1px solid #bec941;
+                margin-right: 10px;
+                line-height: 1;
+            }
+
+            &__text {
+                flex: 0 auto;
+                color: #000;
+                font: 400 12px/1 "Open Sans";
+            }
         }
     }
 }
@@ -106,6 +209,7 @@ p {
 
         &--tel {
             margin-right: 20px;
+
             &:last-child {
                 margin: 0;
             }
@@ -211,12 +315,248 @@ p {
     }
 }
 
+// MAILING
+.mailing {
+    background: url("../img/plane.png") 30% center/auto 110% no-repeat#f7f7f7;
+    min-height: 311px;
+    height: 311px;
+
+    .container {
+        height: inherit;
+    }
+
+    .row {
+        height: inherit;
+    }
+
+    &-form {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        height: auto;
+        margin-top: 36px;
+        width: 100%;
+
+        &-item {
+            flex: 0 auto;
+            transform-origin: 50% 50%;
+            background: #fff;
+            transform: skewX(30deg);
+            height: 64px;
+
+            &__input {
+                width: 330px;
+                display: block;
+                transform: skewX(-30deg);
+                background: transparent;
+                outline: none;
+                padding: 24px 50px;
+                font-size: 16px;
+                border: 0;
+            }
+
+            &__btn {
+                background: transparent;
+                border: 0;
+                transform: skewX(-30deg);
+                height: inherit;
+                color: #fff;
+                width: 100%;
+                text-align: center;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            &--btn {
+                background: #BEC941;
+                flex: 0 200px;
+            }
+
+            &--input {
+                border: 2px solid #E2E2E2;
+                border-right: none;
+                flex: 0 450px;
+            }
+        }
+    }
+
+    &__title {
+        font: 500 42px/1 "Wichita";
+        text-transform: uppercase;
+        margin: 0 0 20px;
+        padding: 0;
+    }
+
+    &__text {
+        font: 400 16px/25px "Open Sans";
+    }
+}
+
+// NEWS
+.news {
+    height: auto;
+    width: 100%;
+
+    &--index-page {
+        min-height: 714px;
+        height: 714px;
+    }
+
+    .row {
+        height: inherit;
+    }
+
+    &-section-btn {
+        margin: 0 auto;
+        background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIwIiBoZWlnaHQ9IjUzIiB2aWV3Qm94PSIwIDAgMjIwIDUzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyLjkzNyAxMS4zMjhMMjA4LjAzOSAwLjI1Nzk5NkwyMjAgNTIuNDcxTDAuMzU0MDA0IDUyLjE0MUwxMi45MzcgMTEuMzI4WiIgZmlsbD0iI0QzRDNEMyIvPgo8L3N2Zz4K") center center/contain no-repeat transparent;
+        text-decoration: none;
+        color: #fff;
+        width: 100%;
+        display: block;
+        text-align: center;
+        line-height: 1;
+        padding: 26px 0 20px;
+        max-width: 230px;
+        position: relative;
+
+        &:hover {
+            background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIwIiBoZWlnaHQ9IjUzIiB2aWV3Qm94PSIwIDAgMjIwIDUzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyLjkzNyAxMS4zMjhMMjA4LjAzOSAwLjI1ODAwM0wyMjAgNTIuNDcxTDAuMzU0MDA0IDUyLjE0MUwxMi45MzcgMTEuMzI4WiIgZmlsbD0iI0JFQzk0MSIvPgo8L3N2Zz4K") center center/contain no-repeat transparent;
+        }
+    }
+
+    &-container {
+        display: grid;
+        grid-template: auto/1fr 1fr;
+        grid-gap: 20px;
+        height: auto;
+        width: 100%;
+        margin-bottom: 20px;
+
+        &--page-index {
+            height: 480px;
+            grid-template: 230px/1fr 2fr;
+            grid-template-areas:
+                "small large"
+                ". large";
+        }
+    }
+
+    &-box {
+        background: center center/100% 100% no-repeat #BEC941;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+
+        &-inner {
+            background: linear-gradient(to bottom, transparent 10%, #BEC941 90%);
+            color: #fff;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-between;
+            text-decoration: none;
+            padding: 16px;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        &-preview {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 0;
+        }
+
+        &__category {
+            flex: 0 auto;
+            align-self: flex-end;
+            padding: 10px 23px;
+            border-radius: 19px;
+            background-color: #BEC941;
+            text-align: center;
+            margin-bottom: auto;
+            font: 500 16px/1 "Open Sans";
+            width: auto;
+        }
+
+        &__title {
+            flex: 0 auto;
+            margin: 0 0 20px;
+            padding: 0;
+            font: 600 25px/1 "Wichita";
+            text-transform: uppercase;
+        }
+
+        &__date {
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAyIiBoZWlnaHQ9IjM0IiB2aWV3Qm94PSIwIDAgMTAyIDM0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMCAzNEw0LjUgNEw5MSAwTDEwMS41IDM0SDBaIiBmaWxsPSIjQzRDNEM0IiBmaWxsLW9wYWNpdHk9IjAuNSIvPgo8L3N2Zz4K");
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            flex: 0 36px;
+            height: 36px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 36px;
+            margin-bottom: 20px;
+            width: 115px;
+        }
+
+        &__descr {
+            z-index: 1;
+            font: 400 16px/25px "Open Sans";
+            margin-bottom: 20px;
+        }
+
+        &__read-btn {
+            background: #fff;
+            display: none;
+            align-self: flex-start;
+            line-height: 46px;
+            text-align: center;
+            color: #000;
+            text-decoration: none;
+            max-width: 190px;
+            width: 100%;
+
+            &:hover {
+                color: #BEC941;
+            }
+        }
+
+        &--large {
+            grid-area: large;
+        }
+
+        &:hover {
+            .news-box__read-btn {
+                display: inline-block;
+            }
+        }
+    }
+}
+
 // FOOTER
 .footer {
     background: #3d3d3d;
     min-height: 86px;
     height: 86px;
     color: #fff;
+
+    .container {
+        height: inherit;
+    }
+
+    .row {
+        height: inherit;
+    }
 }
 
 .social-list {
