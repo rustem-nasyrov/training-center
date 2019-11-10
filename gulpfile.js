@@ -12,7 +12,8 @@ const {
     sass = require('gulp-sass'),
     del = require('del'),
     autoprefixer = require('gulp-autoprefixer'),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    rigger = require('gulp-rigger');
 
 const path = {
     src: {
@@ -21,6 +22,7 @@ const path = {
         js: './src/js/**/*.js',
         img: './src/images/**/*',
         fonts: './src/fonts/**/*',
+        components: './src/html/**/*.html',
     },
     dist: {
         html: './dist',
@@ -34,7 +36,7 @@ const path = {
 
 const clean = () => del(path.dist.html);
 
-const html = () => src(path.src.html).pipe(dest(path.dist.html)).pipe(bs.stream());
+const html = () => src(path.src.html).pipe(rigger()).pipe(dest(path.dist.html)).pipe(bs.stream());
 
 const css = cb => {
     return src(path.src.css)
@@ -71,6 +73,7 @@ const serve = () => {
         server: path.dist.html,
     });
     watch(path.src.html, html, bs.reload);
+    watch(path.src.components, html, bs.reload);
     watch(path.src.css, css, bs.reload);
     watch(path.src.js, js, bs.reload);
     watch(path.src.fonts, fonts);

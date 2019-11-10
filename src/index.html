@@ -9,134 +9,61 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery.slim.min.js"></script>
+    <script src="js/slick.min.js"></script>
 </head>
 
 <body>
-    <header class="header-container">
-        <div class="header">
-            <div class="header__top">
-                <div class="grid">
-                    <div class="grid__item">
-                        <a href="tel:+7(999)1776002"
-                            class="header__link header__link--tel"
-                            title="Позвонить по номеру +7 (999) 177-60-02">+7
-                            (999) 177-60-02</a>
-                        <a href="tel:+7(961)8875858"
-                            class="header__link header__link--tel"
-                            title="Позвонить по номеру +7 (961) 887-58-58">+7
-                            (961) 887-58-58</a>
-                        <p class="header__address">
-                            Томск, ул. Гоголя 33, 2 этаж
-                        </p>
-                    </div>
-                    <div class="grid__item">
-                        <a href="/" class="logo" title="Главная страница"></a>
-                    </div>
-                    <div class="grid__item">
-                        <ul class="social-list">
-                            <li class="social-list__item">
-                                <a href="#"
-                                    class="social-list__link social-list__link--vk"></a>
-                            </li>
-                            <li class="social-list__item">
-                                <a href="#"
-                                    class="social-list__link social-list__link--fb"></a>
-                            </li>
-                            <li class="social-list__item">
-                                <a href="#"
-                                    class="social-list__link social-list__link--instagram"></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="grid__item">
-                        <button class="btn btn--login" id="authPopupBtn">
-                            <span class="btn__text">Вход в личный кабинет</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="header__bottom">
-                <ul class="header-nav">
-                    <li class="header-nav__item">
-                        <a href="#" class="header-nav__link">О центре</a>
-                    </li>
-                    <li class="header-nav__item">
-                        <a href="#" class="header-nav__link">Личная
-                            консультация</a>
-                    </li>
-                    <li class="header-nav__item">
-                        <a href="#" class="header-nav__link">Школа жены</a>
-                    </li>
-                    <li class="header-nav__item">
-                        <a href="#" class="header-nav__link">ИРП</a>
-                    </li>
-                    <li class="header-nav__item">
-                        <a href="#" class="header-nav__link">Аренда</a>
-                    </li>
-                    <li class="header-nav__item">
-                        <a href="#" class="header-nav__link">Записи</a>
-                    </li>
-                    <li class="header-nav__item">
-                        <a href="#" class="header-nav__link">Контакты</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </header>
+    //= html/header.html
     <main class="main">
-        <section class="hero container-fluid">
-            <div class="row">
-                <div class="col">slider</div>
+        <section class="slider-container">
+            //= html/slider.html
+            <div class="slider-controls">
+                <button class="slider-btn-prev">&#8592;</button>
+                <div class="slider-paging">
+                    <span class="slider-paging__current">0</span>
+                    <span class="slider-paging__devider">/</span>
+                    <span class="slider-paging__total">0</span>
+                </div>
+                <button class="slider-btn-next">&#8594;</button>
             </div>
         </section>
-        <section class="container">
-            <div class="row">
-                <div class="col">
-                    <a href="#">
-                    </a>
-                    Личная консультация
-                </div>
-                <div class="col">
-                    <a href="#"></a>
-                    Школа жены
-                </div>
-                <div class="col">
-                    <a href="#"></a>
-                    ИРП
-                </div>
-            </div>
-        </section>
-        <section class="mailing">
+        <section class="courses">
             <div class="container">
-                <div class="row justify-content-end align-items-center">
-                    <div class="col-6">
-                        <h2 class="mailing__title">Подпишись на рассылку</h2>
-                        <p class="mailing__text">
-                            и получи доступ к личному кабинету с бесплатными
-                            вебинарами
-                            от Мастерской Буланже
-                        </p>
-                        <form action="#" method="POST" class="mailing-form">
-                            <div
-                                class="mailing-form-item mailing-form-item--input">
-                                <input class="mailing-form-item__input"
-                                    type="email" placeholder="Ваш email"
-                                    required autocomplete="on">
-                            </div>
-                            <div
-                                class="mailing-form-item mailing-form-item--btn">
-                                <button class="mailing-form-item__btn"
-                                    type="submit">Подписаться</button>
-                            </div>
-                        </form>
+                <div class="row align-items-center">
+                    <div class="col">
+                        <div class="course">
+                            <div class="course-preview"></div>
+                            <a href="#" class="course__link">
+                                Личная<br />консультация
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="course">
+                            <div class="course-preview"></div>
+                            <a href="#" class="course__link">
+                                Школа жены
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="course">
+                            <div class="course-preview"></div>
+                            <a href="#" class="course__link">
+                                ИРП
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- /.courses -->
+        //= ./html/mailing.html
         <section class="news news--index-page container">
             <div class="row align-items-center">
                 <div class="col">
-                    <div class="news-container news-container--page-index">
+                    <div class="news-container news-container--has-lead">
                         <div class="news-box">
                             <div class="news-box-inner">
                                 <span class="news-box__category">Видео</span>
@@ -189,60 +116,34 @@
                 </div>
             </div>
         </section>
+        <!-- /.news -->
     </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col">
-                    <span>© 2014-2019 — «Мастерская Буланже»</span>
-                </div>
-                <div class="col">
-                    <ul class="social-list">
-                        <li class="social-list__item">
-                            <a href="#"
-                                class="social-list__link social-list__link--vk"></a>
-                        </li>
-                        <li class="social-list__item">
-                            <a href="#"
-                                class="social-list__link social-list__link--fb"></a>
-                        </li>
-                        <li class="social-list__item">
-                            <a href="#"
-                                class="social-list__link social-list__link--instagram"></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div class="auth-popup">
-        <form action="#" method="POST" class="auth-popup-form">
-            <div class="auth-popup-form__input">
-                <label for="input-login">Ваш логин:</label>
-                <input type="text" placeholder="Введите логин" required
-                    id="input-login">
-            </div>
-            <div class="auth-popup-form__input">
-                <label for="input-pass">Ваш пароль</label>
-                <input type="text" placeholder="Введите пароль" required
-                    id="input-pass">
-            </div>
-            <div class="auth-popup-form__input">
-                <label class="auth-popup-form-cbox" for="input-cbox">
-                    <input type="checkbox" name="input-cbox" id="input-cbox"
-                        class="auth-popup-form-cbox__input" checked>
-                    <span class="auth-popup-form-cbox__cbox"></span>
-                    <span class="auth-popup-form-cbox__text">Запомнить
-                        меня</span>
-                </label>
-            </div>
-            <button
-                class="auth-popup-form__btn auth-popup-form__btn--active">Войти</button>
-            <button class="auth-popup-form__btn">Регистрация</button>
-        </form>
-    </div>
+    //= html/footer.html
     <script>
         'use strict';
+        $(function () {
+
+            let $slider = $('.slider').slick({
+                autoPlay: true,
+                dots: false,
+                prevArrow: $('.slider-btn-prev'),
+                nextArrow: $('.slider-btn-next'),
+            });
+            $('.slider-paging__current').text($(
+                    '.slider-item:not(.slick-cloned)')
+                .index());
+            $('.slider-paging__total').text($(
+                '.slider-item:not(.slick-cloned)').length);
+            const pageCounterHandler = (event, slick,
+                currentSlide, nextSlide) => {
+                let i = (currentSlide ? currentSlide : 0) + 1;
+                $('.slider-paging__current').text(i);
+                $('.slider-paging__total').text(slick.slideCount);
+            }
+            $slider.on('init reInit afterChange', pageCounterHandler);
+            $('.auth-btn').click(() => $('.auth-popup').toggleClass(
+                'auth-popup--active'));
+        });
     </script>
 </body>
 
