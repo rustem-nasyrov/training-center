@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>«Мастерская Буланже» - Школа ИРП</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery.slim.min.js"></script>
+    <script src="js/slick.min.js"></script>
+</head>
+
+<body>
+    //= html/header.html
+    <main class="main">
+        //= ./html/introduce.html
+        <section class="section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <p>
+                            <b class="green-color">Ресурсное состояние</b> – это
+                            состояние, в котором у человека достаточно сил и
+                            энергии, чтобы идти к своей цели и успешно
+                            справляться с любыми обстоятельствами. Находясь в
+                            ресурсном состоянии человек может взять
+                            ответственность за свою жизнь и здоровье, а так же
+                            принимать оптимальные решения.
+                        </p>
+                        <p>
+                            В последнее время я все чаще вижу в своих клиентах
+                            огромный интерес к работе над собой, и это как раз
+                            те случаи, когда человек осознанно не доводит
+                            ситуацию до критической, а хочет повлиять на ее
+                            позитивное развитие в самом начале.
+                        </p>
+                        <p>
+                            <b>Опыт так же показывает</b> - если человек сам не
+                            хочет решать свои проблемы, то помочь ему не
+                            получится даже самому грамотному психологу. По этому
+                            эффективность результата зависит от желания клиента!
+                            Консультация может быть личная, парная, семейные,
+                            групповые.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /.section (some text) -->
+        <section class="section section--dark">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-11">
+                        <p>
+                            Существует 4 типа распространенных конфликтных
+                            ситуаций и реакций на них, которые можно успешно
+                            проработать с психологом.
+                        </p>
+                        <p>
+                            Здесь описаны часто встречающиеся случаи со слов
+                            тех, кто уже прошел консультацию.
+                        </p>
+                    </div>
+                    <div class="col-1">
+                        <div class="card">
+                            <span class="card__text">4 типа</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        //= ./html/slider-psycho.html
+        //= ./html/news-embed.html
+        //= ./html/reviews.html
+        //= ./html/form.html
+    </main>
+    //= html/footer.html
+    <script>
+        'use strict';
+        $('.form-item__input').on('focusin', function () {
+            $(this).parent().addClass('form-item--active');
+        }).on('focusout', function () {
+            $(this).parent().removeClass('form-item--active');
+        });
+        $('.reviews-slider').slick({
+            slidesToShow: 3,
+            dots: true,
+            arrows: false,
+        })
+    </script>
+</body>
+
+</html>
