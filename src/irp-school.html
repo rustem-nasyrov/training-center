@@ -34,7 +34,8 @@
         }).on('focusout', function () {
             $(this).parent().removeClass('form-item--active');
         });
-        $('').slick({
+        $('.reviews-slider').slick({
+            slidesToShow: 3,
             dots: true,
             arrows: false,
         })
