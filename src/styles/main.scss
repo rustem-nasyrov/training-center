@@ -1199,6 +1199,27 @@ p {
     }
 }
 
+// COURSE STRUCTURE LIST
+.course-structure {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    list-style: none;
+
+    &__item {
+        height: 258px;
+        width: 258px;
+        flex: 0 258px;
+        border: 1px solid #e8e8e8;
+        padding: 49px;
+        text-align: center;
+    }
+}
+
 // REVIEWS SLIDER
 .reviews-slider {
     &-item {
