@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>«Мастерская Буланже» - Школа ИРП</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery.slim.min.js"></script>
+    <script src="js/slick.min.js"></script>
+</head>
+
+<body>
+    //= html/header.html
+    <main class="main">
+        <section class="section section--wife-school">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-6">
+                        <h1 class="wife-school__title">
+                            Презентация Школы Жены - <br />
+                            это уникальный по своей значимости проект
+                        </h1>
+                        <p class="wife-school__text">
+                            <span class="green-color">Миссия проекта:</span>
+                            Во благо женщины!<br />
+                            ВозРождение семьи! - как основы здорового общества
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /.section (hero) -->
+        <section class="section section--wife-school-descr">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-4"></div>
+                    <div class="col-8">
+                        <p>
+                            Помочь женщине-жене вспомнить свою истинную природу.
+                            Научиться ладить с мужем и строить в семье здоровые
+                            отношения основанные на общих интересах, уважении,
+                            взаимопонимании, любви. Быть счастливой женщиной.
+                            Дарить счастье мужчине. Быть
+                            для себя и своего мужа источником вдохновения.
+                        </p>
+                        <p>
+                            <b class="green-color">Школа жены это так называемый
+                                «семейно-строительный
+                                инаститут»</b>, обучаясь в котором, вы получите
+                            бесценный опыт который невозможно получить в
+                            интернете. Мудрые наставники, основополагающие
+                            законы бытия, не зная которых в наше время мы ни как
+                            ни освобождаемся от ответственности! Это конечно
+                            освобождение от негативных
+                            семейных сценариев
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section--dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="section-title">
+                            <h2 class="section-title__text">Для кого</h2>
+                        </div>
+                        <ul class="list">
+                            <li class="list-item">
+                                <img src="./img/who/1.png"
+                                    class="list-item__img">
+                                <p class="list-item__text">
+                                    Для молодых женщин, которые не знают,
+                                    что делать с ребенком и мужем
+                                </p>
+                            </li>
+                            <li class="list-item">
+                                <img src="./img/who/2.png"
+                                    class="list-item__img">
+                                <p class="list-item__text">
+                                    Для девушек, живущих в гражданском браке,
+                                    желающие выйти замуж
+                                </p>
+                            </li>
+                            <li class="list-item">
+                                <img src="./img/who/3.png"
+                                    class="list-item__img">
+                                <p class="list-item__text">
+                                    Женщины, которые разводились, и хотят
+                                    понять, что они делают не так
+                                </p>
+                            </li>
+                            <li class="list-item">
+                                <img src="./img/who/4.png"
+                                    class="list-item__img">
+                                <p class="list-item__text">
+                                    Женщины, у которых не
+                                    получается строить продолжительные отношения
+                                </p>
+                            </li>
+                            <li class="list-item">
+                                <img src="./img/who/5.png"
+                                    class="list-item__img">
+                                <p class="list-item__text">
+                                    Женщины в браке на грани развода
+                                </p>
+                            </li>
+                            <li class="list-item">
+                                <img src="./img/who/6.png"
+                                    class="list-item__img">
+                                <p class="list-item__text">
+                                    Активные, деловые женщины замужем
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /.section (list) -->
+        //= ./html/news-embed.html
+        //= ./html/reviews.html
+        //= ./html/form.html
+    </main>
+    //= html/footer.html
+    <script>
+        'use strict';
+        $('.form-item__input').on('focusin', function () {
+            $(this).parent().addClass('form-item--active');
+        }).on('focusout', function () {
+            $(this).parent().removeClass('form-item--active');
+        });
+        $('.reviews-slider').slick({
+            slidesToShow: 3,
+            dots: true,
+            arrows: false,
+        })
+    </script>
+</body>
+
+</html>

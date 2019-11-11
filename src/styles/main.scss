@@ -23,6 +23,7 @@ body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
+    background: #fff;
 }
 
 a,
@@ -32,7 +33,17 @@ button {
 }
 
 p {
-    margin: 0;
+    margin: 0 0 20px;
+    font: 500 16px/25px "Open Sans";
+    color: #000;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.green-color {
+    color: $main-color;
 }
 
 .text {
@@ -1056,7 +1067,6 @@ p {
 .section {
     padding: 30px 0;
 
-
     &__hero-img {
         height: auto;
         width: 100%;
@@ -1068,6 +1078,48 @@ p {
 
     &--dark {
         background: #f7f7f7;
+    }
+
+    &--hero {
+        min-height: 490px;
+        padding: 0;
+        height: 490px;
+
+        .container {
+            height: inherit;
+        }
+
+        .row {
+            height: inherit;
+        }
+    }
+
+    &--wife-school {
+        background: url("../img/wife-school.png") center center/cover no-repeat transparent;
+        min-height: 720px;
+        height: 720px;
+
+        .container {
+            height: inherit;
+        }
+
+        .row {
+            height: inherit;
+        }
+    }
+
+    &--wife-school-descr {
+        min-height: 550px;
+        height: 550px;
+        background: url("../img/young-couple.png") left bottom/contain no-repeat transparent;
+
+        .container {
+            height: inherit;
+        }
+
+        .row {
+            height: inherit;
+        }
     }
 }
 
@@ -1100,6 +1152,18 @@ p {
         &::after {
             left: 110%;
         }
+    }
+}
+
+.wife-school {
+    &__title {
+        color: #000;
+        font: bold 43px/55px "Open Sans";
+    }
+
+    &__text {
+        color: #000;
+        font: 400 18px/25px "Open Sans";
     }
 }
 
@@ -1217,7 +1281,127 @@ p {
         border: 1px solid #e8e8e8;
         padding: 49px;
         text-align: center;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+
+        &:hover {
+            background: #f7f7f7;
+        }
+
+        &:nth-child(odd) .course-structure-num::after {
+            display: block;
+            transform: perspective(2000px) rotateY(30deg) skewX(10deg) translate(-50%, -50%);
+        }
+
+        &:nth-child(even) .course-structure-num::after {
+            display: block;
+            transform: perspective(3000px) rotateY(-30deg) skewX(-10deg) translate(-70%, -50%);
+        }
     }
+
+    &-num {
+        flex: 0 121px;
+        margin-bottom: 20px;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 130px;
+            width: 130px;
+            transform-origin: 50% 50%;
+            perspective-origin: 50% 50%;
+            background: $main-color;
+            display: none;
+        }
+
+        &__text {
+            font: 600 150px/121px "Wichita";
+            position: relative;
+            z-index: 1;
+            color: #fff;
+        }
+    }
+
+    &__text {
+        font-size: 18px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+}
+
+// IRP
+.irp-hero {
+    &-img {
+        display: block;
+        margin: 0 auto;
+        height: 370px;
+        width: 275px;
+    }
+
+    &-title {
+        color: #000;
+        font-size: 45px;
+        font-family: "Wichita";
+        text-transform: uppercase;
+        margin: 0 0 5px;
+    }
+
+    &-text {
+        color: #000;
+        font-family: "Open Sans";
+        font-size: 16px;
+        line-height: 25px;
+        margin: 0 0 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// WIFE SCHOOL
+
+// LIST
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+
+    &-item {
+        flex: 0 360px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+        &__img {
+            margin-bottom: 20px;
+            height: 200px;
+        }
+
+        &__text {
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            flex: 0 80px;
+            margin: 0;
+        }
+    }
+
 }
 
 // REVIEWS SLIDER
