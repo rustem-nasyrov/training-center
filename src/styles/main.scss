@@ -58,6 +58,47 @@ p {
     &-right {
         text-align: right;
     }
+
+    &-main {
+        color: #000;
+        font: 600 26px/35px "Open Sans";
+    }
+}
+
+.conflict-type-card {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    perspective: 500px;
+    perspective-origin: center left;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        background: $main-color;
+        transform: rotateY(-30deg) translate(-25%, -50%);
+        height: 140px;
+        width: 140px;
+    }
+
+    &__text {
+        font-family: "Wichita";
+        font-size: 176px;
+        color: #000;
+        line-height: 1;
+        letter-spacing: -20px;
+        position: relative;
+        z-index: 1;
+
+        span {
+            font-size: 74px;
+            line-height: 35px;
+            letter-spacing: 0;
+        }
+
+    }
 }
 
 .logo {
@@ -1120,6 +1161,12 @@ p {
         min-height: 550px;
         height: 550px;
         background: url("../img/young-couple.png") left bottom/contain no-repeat transparent;
+    }
+
+    &--conflict-types-count {
+        height: 296px;
+        min-height: 296px;
+        padding: 0;
     }
 }
 
