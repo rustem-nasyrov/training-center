@@ -476,6 +476,9 @@ p {
     &:focus {
         .course-preview {
             box-shadow: 0px 0px 68px 0px rgba(99, 99, 99, 0.33);
+            &--img {
+                box-shadow: none;
+            }
         }
 
         .course__link {
