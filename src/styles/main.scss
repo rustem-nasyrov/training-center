@@ -436,6 +436,28 @@ p {
         border-radius: 50%;
         border: 8px solid $main-color;
         margin-bottom: 38px;
+        position: relative;
+
+        &--irp {
+            background: url("../img/irp-link.png") center center/cover no-repeat transparent;
+        }
+
+        &--img {
+            position: relative;
+            border-color: transparent;
+            img {
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 243px;
+            }
+        }
+
+        &--wife-school {
+            background: url("../img/wife-school-link.png") center center/cover no-repeat transparent;
+        }
     }
 
     &__link {
@@ -1331,7 +1353,7 @@ p {
     }
 
     &--psycho-anno {
-        background: url("../img/women.png") 397px bottom/349 no-repeat transparent;
+        background: url("../img/women.png") 397px bottom/349px no-repeat transparent;
         height: 511px;
 
         p {
