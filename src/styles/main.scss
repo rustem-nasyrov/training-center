@@ -155,6 +155,11 @@ p {
     font: 400 30px/45px "Open Sans";
 }
 
+.introduce-img {
+    margin: 0 auto;
+    width: 100%;
+}
+
 // SLIDER
 .slider-container {
     min-height: 420px;
@@ -1305,14 +1310,14 @@ p {
     }
 
     &--tutor {
-        height: 500px;
-        padding: 0;
+        padding-bottom: 0;
+        height: auto;
         overflow: hidden;
-        background: url("../img/tutor_lvm_big.png") 80% -10%/auto 535px no-repeat,
-            linear-gradient(to top, #f7f7f7 164px, #fff 164px, #fff) transparent;
+        background: linear-gradient(to top, #f7f7f7 164px, #fff 164px, #fff) transparent;
 
         .container.container--introduce {
-            height: 336px;
+            min-height: 336px;
+            margin-bottom: 30px;
         }
 
         .container.container-fluid {
