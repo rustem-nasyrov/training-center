@@ -150,6 +150,11 @@ p {
     }
 }
 
+.introduce-text {
+    color: #000000;
+    font: 400 30px/45px "Open Sans";
+}
+
 // SLIDER
 .slider-container {
     min-height: 420px;
@@ -263,6 +268,135 @@ p {
             outline: none;
             padding: 20px 50px;
         }
+    }
+}
+
+.reviews-slider {
+    &-item {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        outline: none;
+        margin: 20px 28px 40px;
+
+        &.slick-slide {
+            display: flex;
+        }
+
+        &__photo {
+            flex: 0 84px;
+            height: 84px;
+            border-radius: 50%;
+            margin-right: 19px;
+            box-shadow: 0 0 16px rgba(0, 0, 1, 0.24);
+        }
+
+        &__text {
+            flex: 0 auto;
+            color: #000000;
+            font: 400 16px/25px "Open Sans";
+
+            b {
+                display: block;
+                font-weight: 600;
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
+
+.psycho-slider {
+    &-item {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        height: auto;
+        margin-bottom: 25px;
+        width: 100%;
+        outline: none;
+
+        &.slick-slide {
+            display: flex;
+        }
+
+        &-preview {
+            flex: 0 550px;
+            margin-right: 135px;
+
+            img {
+                height: 400px;
+            }
+        }
+
+        &-content {
+            flex: 0 705px;
+        }
+
+        &__title {
+            font: 400 45px/34px "Wichita";
+            text-transform: uppercase;
+            height: 35px;
+            color: #000000;
+        }
+
+        &__text {
+            display: block;
+            color: #000000;
+            font: 400 18px/25px "Open Sans";
+        }
+    }
+}
+
+.psycho-slider-controls {
+    text-align: center;
+    width: 100%;
+
+    &-inner {
+        display: inline-block;
+        position: relative;
+        margin: 0 auto;
+        font-size: 24px;
+        line-height: 52px;
+        color: lighten(#919b21, 30%);
+        font-weight: normal;
+        perspective-origin: 50% 50%;
+        perspective: 400px;
+
+        span {
+            position: relative;
+            z-index: 1;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateY(-15deg) rotateX(45deg) skewX(0);
+            height: 60px;
+            width: 120px;
+            background: #f7f7f7;
+            z-index: 0;
+        }
+    }
+
+    &__prev,
+    &__next {
+        background: transparent;
+        border: 0;
+        color: $main-color;
+        cursor: pointer;
+        line-height: inherit;
+        text-align: center;
+        font-size: inherit;
+        font-weight: bold;
+        outline: none;
+        position: relative;
+        height: 52px;
+        width: 40px;
+        z-index: 1;
     }
 }
 
@@ -517,6 +651,7 @@ p {
             font-size: 25px;
             font-family: "Wichita";
             text-transform: uppercase;
+            text-decoration: none;
             z-index: 1;
             outline: none;
 
@@ -1168,6 +1303,36 @@ p {
         min-height: 296px;
         padding: 0;
     }
+
+    &--tutor {
+        height: 500px;
+        padding: 0;
+        overflow: hidden;
+        background: url("../img/tutor_lvm_big.png") 80% -10%/auto 535px no-repeat,
+            linear-gradient(to top, #f7f7f7 164px, #fff 164px, #fff) transparent;
+
+        .container.container--introduce {
+            height: 336px;
+        }
+
+        .container.container-fluid {
+            max-width: none;
+        }
+
+        .container.container--introduce-point {
+            height: 164px;
+            // background: #f7f7f7;
+        }
+    }
+
+    &--psycho-anno {
+        background: url("../img/women.png") 397px bottom/349 no-repeat transparent;
+        height: 511px;
+
+        p {
+            padding-left: 30px;
+        }
+    }
 }
 
 // SECTION TITLE
@@ -1449,41 +1614,6 @@ p {
         }
     }
 
-}
-
-// REVIEWS SLIDER
-.reviews-slider {
-    &-item {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        outline: none;
-        margin: 20px 28px 40px;
-
-        &.slick-slide {
-            display: flex;
-        }
-
-        &__photo {
-            flex: 0 84px;
-            height: 84px;
-            border-radius: 50%;
-            margin-right: 19px;
-            box-shadow: 0 0 16px rgba(0, 0, 1, 0.24);
-        }
-
-        &__text {
-            flex: 0 auto;
-            color: #000000;
-            font: 400 16px/25px "Open Sans";
-
-            b {
-                display: block;
-                font-weight: 600;
-                margin-bottom: 16px;
-            }
-        }
-    }
 }
 
 // FORM

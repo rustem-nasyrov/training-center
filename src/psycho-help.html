@@ -17,16 +17,18 @@
     //= html/header.html
     <main class="main">
         //= ./html/introduce.html
-        <section class="section">
+        <section class="section section--psycho-anno">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col">
+                    <div class="col-5"></div>
+                    <div class="col-7">
                         <p>
-                            <b class="green-color">Ресурсное состояние</b> – это
-                            состояние, в котором у человека достаточно сил и
-                            энергии, чтобы идти к своей цели и успешно
-                            справляться с любыми обстоятельствами. Находясь в
-                            ресурсном состоянии человек может взять
+                            <b class="green-color">
+                                Ресурсное состояние
+                            </b> – это состояние, в котором у человека
+                            достаточно сил и энергии, чтобы идти к своей цели и
+                            успешно справляться с любыми обстоятельствами.
+                            Находясь в ресурсном состоянии человек может взять
                             ответственность за свою жизнь и здоровье, а так же
                             принимать оптимальные решения.
                         </p>
@@ -92,7 +94,16 @@
             slidesToShow: 3,
             dots: true,
             arrows: false,
-        })
+        });
+        $('.psycho-slider').slick({
+            autoplay: true,
+            delay: 3000,
+            dots: false,
+            slidesToShow: 1,
+            arrows: true,
+            prevArrow: $('.psycho-slider-controls__prev'),
+            nextArrow: $('.psycho-slider-controls__next'),
+        });
     </script>
 </body>
 
