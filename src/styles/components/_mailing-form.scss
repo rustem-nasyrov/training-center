@@ -1,0 +1,102 @@
+.mailing {
+    background: #f7f7f7;
+    height: auto;
+
+    .container {
+        height: inherit;
+    }
+
+    .row {
+        height: inherit;
+    }
+
+    &-picture {
+        text-align: center;
+    }
+
+    // &-form-container {}
+
+    &-form {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        height: auto;
+        margin-top: 36px;
+        width: 100%;
+
+        &-item {
+            flex: 0 auto;
+            transform-origin: 50% 50%;
+            background: #fff;
+            transform: skewX(30deg);
+            height: 64px;
+
+            &__input {
+                width: 330px;
+                display: block;
+                transform: skewX(-30deg);
+                background: transparent;
+                outline: none;
+                padding: 24px 50px;
+                font-size: 16px;
+                border: 0;
+            }
+
+            &__btn {
+                background: transparent;
+                border: 0;
+                transform: skewX(-30deg);
+                height: inherit;
+                color: #fff;
+                width: 100%;
+                text-align: center;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            &--btn {
+                background: $main-color;
+                flex: 0 200px;
+            }
+
+            &--input {
+                border: 2px solid #E2E2E2;
+                border-right: none;
+                flex: 0 370px;
+            }
+        }
+    }
+
+    &__title {
+        font: 500 42px/1 "Wichita";
+        text-transform: uppercase;
+        margin: 0 0 20px;
+        padding: 0;
+    }
+
+    &__text {
+        font: 400 16px/25px "Open Sans";
+    }
+}
+
+@media (max-width: $tablet) {
+    .mailing-form-container {
+        text-align: center;
+    }
+
+    .mailing {
+        background: linear-gradient(to bottom, #fff 200px, #f7f7f7 200px);
+        height: auto;
+        padding: 0 15px 34px;
+
+        // &-form {}
+
+        &__title,
+        &__text {
+            width: 75%;
+            margin: 0 auto
+        }
+    }
+}

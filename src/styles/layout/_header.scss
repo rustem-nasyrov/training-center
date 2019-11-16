@@ -1,0 +1,82 @@
+.header {
+    background: #919b21;
+    border-bottom: 2px solid transparent;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    position: relative;
+    height: 243px;
+    z-index: 1;
+
+    &-info {
+        flex: 0 166px;
+        height: 166px;
+        // min-height: 166px;
+        width: 100%;
+
+        .container {
+            height: inherit;
+        }
+
+        .row {
+            height: inherit;
+        }
+    }
+
+    &__address {
+        margin: 16px 0;
+        color: #fff;
+    }
+
+    &__link {
+        color: #fff;
+        text-decoration: none;
+
+        &--tel {
+            margin-right: 20px;
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &--fixed {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+    }
+}
+
+@media (max-width: $tablet) {
+    .header {
+        background: transparent;
+        height: auto;
+        border: 0;
+
+        &-info {
+            background: #919b21;
+            height: 40px;
+            flex: 0 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        &--fixed {
+            .header-info {
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+            }
+        }
+    }
+}
+
+@import "../components/nav-btn";
+@import "../components/nav";

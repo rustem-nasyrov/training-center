@@ -1,0 +1,21 @@
+.footer {
+    background: #3d3d3d;
+    // min-height: 86px;
+    height: 86px;
+    color: #fff;
+
+    .container {
+        height: inherit;
+    }
+
+    .row {
+        height: inherit;
+    }
+}
+
+@media (max-width: $tablet) {
+    .footer {
+        height: 50px;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,128 @@
+.header-nav {
+    &-container {
+        width: 100%;
+        background: #a7b12d;
+        height: 74px;
+        // min-height: 74px;
+    }
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 100%;
+    max-width: 1280px;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+
+    &+.social-list {
+        display: none;
+    }
+
+    &__item {
+        position: relative;
+        flex: 1 auto;
+        text-align: center;
+
+        &::after {
+            display: none;
+            content: "";
+            background: $main-color;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 130%;
+            width: 82%;
+            z-index: 0;
+            transform-origin: 50% 0%;
+            perspective-origin: center center;
+            transform: translate(-50%, -50%);
+        }
+
+        // четные
+        &:nth-child(odd)::after {
+            transform: perspective(550px) rotateY(-23deg) skewX(17deg) translate(-60%, -50%);
+        }
+
+        // нечетные
+        &:nth-child(even)::after {
+            transform: perspective(550px) rotateY(43deg) skewX(-21deg) translate(-50%, -50%);
+        }
+
+        // четные
+        &:hover:nth-child(even)::after {
+            display: block;
+        }
+
+        // нечетные
+        &:hover:nth-child(odd)::after {
+            display: block;
+        }
+    }
+
+    &__link {
+        text-align: center;
+        display: block;
+        height: inherit;
+        width: inherit;
+        color: #fff;
+        position: relative;
+        text-decoration: none;
+        font-size: 25px;
+        font-family: "Wichita";
+        text-transform: uppercase;
+        text-decoration: none;
+        z-index: 1;
+        outline: none;
+
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .header-nav-container {
+        height: 50vw;
+        width: auto;
+        background: #919b21;
+        display: none;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        padding: 15px;
+
+        &--active {
+            display: flex;
+            position: absolute;
+            top: 99%;
+            left: 0;
+            z-index: 0;
+        }
+    }
+
+    .header-nav {
+        height: auto;
+        flex-flow: column nowrap;
+        flex: 0 300px;
+
+        &+.social-list {
+            display: flex;
+            justify-content: center;
+            margin-top: auto;
+            flex: 0 auto;
+        }
+    }
+
+    .mobile-nav {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+    }
+}

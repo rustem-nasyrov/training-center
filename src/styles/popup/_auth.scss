@@ -1,0 +1,108 @@
+.auth-popup {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    width: 330px;
+    padding: 27px;
+    height: 300px;
+    box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.07);
+    z-index: 5;
+
+    &--active {
+        display: block;
+    }
+
+    &-form {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        line-height: 1;
+
+        &__input {
+            flex: 0 auto;
+            width: 100%;
+
+            label {
+                display: block;
+                font: 400 14px/22px "Open Sans";
+                color: #6c6c6c;
+            }
+
+            label+input {
+                display: block;
+                border-width: 0 0 1px;
+                border-color: #d1d1d1;
+                border-style: solid;
+                width: 100%;
+                outline: none;
+                padding: 6px 0;
+                font: 400 16px/22px "Open Sans";
+
+                &:focus,
+                &:active {
+                    border-color: $main-color;
+                }
+            }
+        }
+
+        &__btn {
+            width: 100%;
+            flex: 0 40px;
+            background: #fff;
+            border: 1px solid $main-color;
+            outline: none;
+            cursor: pointer;
+
+            &:hover,
+            &:focus,
+            &--active {
+                background: $main-color;
+                color: #fff;
+            }
+        }
+
+        label.auth-popup-form-cbox {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        &-cbox {
+
+            &__input {
+                display: none;
+
+                &:checked+.auth-popup-form-cbox__cbox {
+                    background: url("../img/check-symbol.png") center center/60% no-repeat $main-color;
+                }
+            }
+
+            &__cbox {
+                flex: 0 auto;
+                display: inline-block;
+                height: 16px;
+                width: 16px;
+                border: 1px solid $main-color;
+                margin-right: 10px;
+                line-height: 1;
+            }
+
+            &__text {
+                flex: 0 auto;
+                color: #000;
+                font: 400 12px/1 "Open Sans";
+            }
+        }
+    }
+}

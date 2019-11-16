@@ -1,0 +1,194 @@
+.courses {
+    // min-height: 532px;
+    height: 532px;
+    width: 100%;
+
+    .container {
+        height: inherit;
+    }
+
+    .row {
+        height: inherit;
+    }
+}
+
+.course {
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+
+    &-preview {
+        height: 243px;
+        width: 243px;
+        flex: 0 243px;
+        border-radius: 50%;
+        border: 8px solid $main-color;
+        margin-bottom: 38px;
+        position: relative;
+
+        picture {
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            text-align: center;
+
+            source,
+            img {
+                width: inherit;
+                height: inherit;
+            }
+        }
+
+        &--tutor {
+            position: relative;
+
+            picture {
+                position: absolute;
+                overflow: visible;
+                left: -1px;
+                bottom: -1px;
+                right: -1px;
+                top: -30px;
+                height: calc(100% + 30px);
+                // height: 263px;
+                // width: 101%;
+
+                source,
+                img {
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    &__link {
+        margin-top: auto;
+        text-align: center;
+        width: 100%;
+        font: 600 25px/30px "Wichita";
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #000;
+        display: inline-block;
+        width: auto;
+    }
+
+    &:hover,
+    &:focus {
+        .course-preview {
+            box-shadow: 0px 0px 68px 0px rgba(99, 99, 99, 0.33);
+        }
+
+        .course__link {
+            color: $main-color;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .courses {
+        height: auto;
+        padding-top: 55px;
+    }
+    .course {
+        &-preview {
+            height: 144px;
+            width: 144px;
+            flex: 0 144px;
+        }
+    }
+}
+
+.cousre-list-container {
+    text-align: center;
+}
+
+.course-list {
+    &__caption {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    list-style: none;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+
+    &__item {
+        flex: 0 auto;
+        text-align: center;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        height: 40px;
+        width: 100%;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &::after {
+            content: "";
+            background: #fff;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            // top: 50%;
+            // left: 50%;
+            // height: 130%;
+            // width: 82%;
+            z-index: 0;
+            transform-origin: 50% 0%;
+            perspective-origin: center center;
+            border: 2px solid $main-color;
+        }
+
+        // четные
+        &:nth-child(odd)::after {
+            transform: perspective(3000px) rotateY(-33deg) skewX(17deg);
+            left: -30px;
+        }
+
+        // нечетные
+        &:nth-child(even)::after {
+            right: -30px;
+            transform: perspective(4000px) rotateY(33deg) skewX(-21deg);
+        }
+
+        &:hover {
+            &::after {
+                background: $main-color;
+            }
+
+            .course-list__link {
+                color: #fff;
+            }
+        }
+    }
+
+    &__link {
+        font-weight: bold;
+        text-decoration: none;
+        color: #000;
+        position: relative;
+        z-index: 1;
+        flex: 0 auto;
+        width: 100%;
+    }
+}
