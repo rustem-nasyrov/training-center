@@ -33,8 +33,12 @@
                 <div class="row align-items-center">
                     <div class="col">
                         <div class="course">
-                            <div class="course-preview course-preview--img">
-                                <img src="../img/personal-consult-link.png" alt="Персональная консультация">
+                            <div class="course-preview course-preview--tutor">
+                                <picture>
+                                    <source src="/img/courses-link/tutor.webp">
+                                    <img src="/img/courses-link/tutor.png"
+                                        alt="Личная консультация">
+                                </picture>
                             </div>
                             <a href="#" class="course__link">
                                 Личная<br />консультация
@@ -43,7 +47,14 @@
                     </div>
                     <div class="col">
                         <div class="course">
-                            <div class="course-preview course-preview--wife-school"></div>
+                            <div class="course-preview">
+                                <picture>
+                                    <source
+                                        src="/img/courses-link/wife-school.webp">
+                                    <img src="/img/courses-link/wife-school.png"
+                                        alt="Школа жены">
+                                </picture>
+                            </div>
                             <a href="#" class="course__link">
                                 Школа жены
                             </a>
@@ -51,7 +62,13 @@
                     </div>
                     <div class="col">
                         <div class="course">
-                            <div class="course-preview course-preview--irp"></div>
+                            <div class="course-preview">
+                                <picture>
+                                    <source src="/img/courses-link/irp.webp">
+                                    <img src="/img/courses-link/irp.png"
+                                        alt="ИРП">
+                                </picture>
+                            </div>
                             <a href="#" class="course__link">
                                 ИРП
                             </a>
@@ -68,7 +85,8 @@
                     <div class="news-container news-container--has-lead">
                         <div class="news-box">
                             <div class="news-box-inner">
-                                <span class="news-box__category">Видео</span>
+                                <span
+                                    class="news-box__category news-box__category--video">Видео</span>
                                 <span class="news-box__date">09.08.2019</span>
                                 <h2 class="news-box__title">Заголовок новости
                                 </h2>
@@ -80,7 +98,8 @@
                         </div>
                         <div class="news-box">
                             <div class="news-box-inner">
-                                <span class="news-box__category">% Акция</span>
+                                <span
+                                    class="news-box__category news-box__category--sales">Акция</span>
                                 <span class="news-box__date">09.08.2019</span>
                                 <h2 class="news-box__title">Заголовок новости
                                 </h2>
@@ -92,8 +111,8 @@
                         </div>
                         <div class="news-box news-box--large">
                             <div class="news-box-inner">
-                                <span
-                                    class="news-box__category">Фотоотчет</span>
+                                <span class="news-box__category
+                                    news-box__category--photo">Фотоотчет</span>
                                 <span class="news-box__date">09.08.2019</span>
                                 <h2 class="news-box__title">Заголовок новости
                                 </h2>
@@ -145,8 +164,21 @@
             $slider.on('init reInit afterChange', pageCounterHandler);
             $('.auth-btn').click(() => $('.auth-popup').toggleClass(
                 'auth-popup--active'));
+            $('.nav-btn').click(() => {
+                $('.header-nav-container').toggleClass(
+                    'header-nav-container--active');
+            });
+            $(window).on('scroll', function () {
+                let scroll = $(window).scrollTop();
+                if (scroll > 50)
+                    $('.header').addClass('header--fixed');
+                else
+                    $('.header').removeClass('header--fixed');
+
+            });
         });
     </script>
+
 </body>
 
 </html>
