@@ -9,16 +9,21 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/jquery.slim.min.js"></script>
-    <script src="js/slick.min.js"></script>
 </head>
 
 <body>
     //= html/header.html
     <main class="main">
         <section class="section section--img">
-            <img src="./img/irp-school.png" alt="Школа ИРП"
-                class="section__hero-img">
+            <picture class="section__hero-img">
+                <source
+                    srcset="/img/irp-school/irp-school-hero.webp, /img/irp-school/irp-school-hero.jpg"
+                    media="screen and (min-width: 1024px)">
+                <source
+                    srcset="/img/irp-school/irp-school-hero_tablet.webp, /img/irp-school/irp-school-hero_tablet.jpg"
+                    media="screen and (min-width: 768px)">
+                <img src="/img/irp-school/irp-school-hero.jpg" alt="Школа ИРП">
+            </picture>
         </section>
         //= ./html/features.html
         //= ./html/programs.html
@@ -27,19 +32,9 @@
         //= ./html/form.html
     </main>
     //= html/footer.html
-    <script>
-        'use strict';
-        $('.form-item__input').on('focusin', function () {
-            $(this).parent().addClass('form-item--active');
-        }).on('focusout', function () {
-            $(this).parent().removeClass('form-item--active');
-        });
-        $('.reviews-slider').slick({
-            slidesToShow: 3,
-            dots: true,
-            arrows: false,
-        });
-    </script>
+    <script src="js/jquery.slim.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>

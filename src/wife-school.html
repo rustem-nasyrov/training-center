@@ -127,19 +127,9 @@
         //= ./html/form.html
     </main>
     //= html/footer.html
-    <script>
-        'use strict';
-        $('.form-item__input').on('focusin', function () {
-            $(this).parent().addClass('form-item--active');
-        }).on('focusout', function () {
-            $(this).parent().removeClass('form-item--active');
-        });
-        $('.reviews-slider').slick({
-            slidesToShow: 3,
-            dots: true,
-            arrows: false,
-        });
-    </script>
+    <script src="js/jquery.slim.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>

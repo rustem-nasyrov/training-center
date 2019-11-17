@@ -9,8 +9,6 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/jquery.slim.min.js"></script>
-    <script src="js/slick.min.js"></script>
 </head>
 
 <body>
@@ -35,7 +33,8 @@
                         <div class="course">
                             <div class="course-preview course-preview--tutor">
                                 <picture>
-                                    <source src="/img/courses-link/tutor.webp">
+                                    <source
+                                        srcset="/img/courses-link/tutor.webp">
                                     <img src="/img/courses-link/tutor.png"
                                         alt="Личная консультация">
                                 </picture>
@@ -50,7 +49,7 @@
                             <div class="course-preview">
                                 <picture>
                                     <source
-                                        src="/img/courses-link/wife-school.webp">
+                                        srcset="/img/courses-link/wife-school.webp">
                                     <img src="/img/courses-link/wife-school.png"
                                         alt="Школа жены">
                                 </picture>
@@ -64,7 +63,7 @@
                         <div class="course">
                             <div class="course-preview">
                                 <picture>
-                                    <source src="/img/courses-link/irp.webp">
+                                    <source srcset="/img/courses-link/irp.webp">
                                     <img src="/img/courses-link/irp.png"
                                         alt="ИРП">
                                 </picture>
@@ -87,7 +86,11 @@
                             <div class="news-box-inner">
                                 <span
                                     class="news-box__category news-box__category--video">Видео</span>
-                                <span class="news-box__date">09.08.2019</span>
+                                <div class="news-box-date">
+                                    <span class="news-box-date__text">
+                                        08.09.2019
+                                    </span>
+                                </div>
                                 <h2 class="news-box__title">Заголовок новости
                                 </h2>
                                 <a href="#"
@@ -100,7 +103,11 @@
                             <div class="news-box-inner">
                                 <span
                                     class="news-box__category news-box__category--sales">Акция</span>
-                                <span class="news-box__date">09.08.2019</span>
+                                <div class="news-box-date">
+                                    <span class="news-box-date__text">
+                                        08.09.2019
+                                    </span>
+                                </div>
                                 <h2 class="news-box__title">Заголовок новости
                                 </h2>
                                 <a href="#"
@@ -113,7 +120,11 @@
                             <div class="news-box-inner">
                                 <span class="news-box__category
                                     news-box__category--photo">Фотоотчет</span>
-                                <span class="news-box__date">09.08.2019</span>
+                                <div class="news-box-date">
+                                    <span class="news-box-date__text">
+                                        08.09.2019
+                                    </span>
+                                </div>
                                 <h2 class="news-box__title">Заголовок новости
                                 </h2>
                                 <p class="news-box__descr">
@@ -140,45 +151,9 @@
         <!-- /.news -->
     </main>
     //= html/footer.html
-    <script>
-        'use strict';
-        $(function () {
-
-            let $slider = $('.slider').slick({
-                autoPlay: true,
-                dots: false,
-                prevArrow: $('.slider-btn-prev'),
-                nextArrow: $('.slider-btn-next'),
-            });
-            $('.slider-paging__current').text($(
-                    '.slider-item:not(.slick-cloned)')
-                .index());
-            $('.slider-paging__total').text($(
-                '.slider-item:not(.slick-cloned)').length);
-            const pageCounterHandler = (event, slick,
-                currentSlide, nextSlide) => {
-                let i = (currentSlide ? currentSlide : 0) + 1;
-                $('.slider-paging__current').text(i);
-                $('.slider-paging__total').text(slick.slideCount);
-            }
-            $slider.on('init reInit afterChange', pageCounterHandler);
-            $('.auth-btn').click(() => $('.auth-popup').toggleClass(
-                'auth-popup--active'));
-            $('.nav-btn').click(() => {
-                $('.header-nav-container').toggleClass(
-                    'header-nav-container--active');
-            });
-            $(window).on('scroll', function () {
-                let scroll = $(window).scrollTop();
-                if (scroll > 50)
-                    $('.header').addClass('header--fixed');
-                else
-                    $('.header').removeClass('header--fixed');
-
-            });
-        });
-    </script>
-
+    <script src="js/jquery.slim.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
