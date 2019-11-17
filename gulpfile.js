@@ -13,7 +13,8 @@ const {
     del = require('del'),
     autoprefixer = require('gulp-autoprefixer'),
     sourcemaps = require('gulp-sourcemaps'),
-    rigger = require('gulp-rigger');
+    rigger = require('gulp-rigger'),
+    imagemin = require('gulp-imagemin');
 
 const path = {
     src: {
@@ -65,7 +66,20 @@ const js = () => {
 
 const fonts = () => src(path.src.fonts).pipe(dest(path.dist.fonts));
 
-const img = () => src(path.src.img).pipe(dest(path.dist.img));
+const img = () => {
+    return src(path.src.img)
+        .pipe(imagemin([
+            imagemin.jpegtran({ progressive: true }),
+            imagemin.svgo({
+                plugins: [
+                    { collapseGroups: false },
+                    { removeViewBox: false },
+                    { cleanupIDs: false }
+                ]
+            })
+        ]))
+        .pipe(dest(path.dist.img));
+};
 
 const serve = () => {
     bs.init({
