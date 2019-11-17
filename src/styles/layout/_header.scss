@@ -53,12 +53,19 @@
         right: 0;
         left: 0;
         z-index: 10;
+        height: auto;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+
+        .header-info {
+            display: none;
+        }
     }
 }
 
 @media (max-width: $tablet) {
     .header {
         background: transparent;
+        box-shadow: none;
         height: auto;
         border: 0;
 

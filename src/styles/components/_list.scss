@@ -1,0 +1,50 @@
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+
+    &-item {
+        flex: 0 360px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+        &__img {
+            margin-bottom: 20px;
+            height: 200px;
+
+            source,
+            img {
+                height: inherit;
+            }
+        }
+
+        &__text {
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            flex: 0 80px;
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .list {
+        &-item {
+            &__text {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+}

@@ -139,14 +139,34 @@ p {
     }
 }
 
+@media (max-width: $tablet) {
+    .btn {
+        &--logout {
+            padding: 10px 30px;
+        }
+    }
+}
+
 .introduce-text {
     color: #000000;
     font: 400 30px/45px "Open Sans";
 }
 
+@media (max-width: $tablet) {
+    .introduce-text {
+        font-size: 23px;
+        line-height: 1;
+    }
+}
+
 .introduce-img {
     margin: 0 auto;
     width: 100%;
+
+    source,
+    img {
+        width: inherit;
+    }
 }
 
 // MAIN
@@ -179,99 +199,13 @@ p {
 @import "./components/pagination";
 
 // PROFILE
-.profile {
-    &-head {
-        background: #f1f1f1;
-        border-radius: 10px;
-        padding: 12px 20px;
-        margin: 50px 0 30px;
-
-        &__text {
-            padding: 20px 0;
-            line-height: 1;
-        }
-    }
-
-    &-body {
-        margin: 30px 0 60px;
-    }
-}
+@import "./layout/profile";
 
 // WEBINAR
-.webinar {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
-    align-content: center;
-    align-items: center;
-    height: auto;
-    width: 100%;
-
-    &-head {
-        flex: 0 auto;
-        margin: 20px 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    &-body {
-        background: #fff;
-        box-shadow: -1.117px 31.981px 68px 0px rgba(0, 0, 0, 0.1);
-        flex: 0 370px;
-        border-radius: 10px;
-        overflow: hidden;
-        width: 100%;
-    }
-
-    &-preview {
-        display: block;
-        width: 100%;
-    }
-
-    &__text {
-        font-size: 16px;
-        font-weight: bold;
-    }
-
-    &-link {
-        background: transparent;
-        position: relative;
-        color: #fff;
-        margin: 10px;
-
-        &::after {
-            content: "";
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            bottom: -10px;
-            left: -10px;
-            background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjA2IiBoZWlnaHQ9IjM3IiB2aWV3Qm94PSIwIDAgMjA2IDM3IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy4yNSA1LjkyMTk5TDE5NC4wOTYgMC40NjM5ODlMMjA2IDM3SDBMNy4yNSA1LjkyMTk5WiIgZmlsbD0iI0JFQzk0MSIvPjwvc3ZnPg==) center center/contain no-repeat transparent;
-            z-index: 0;
-        }
-
-
-        &__text {
-            position: relative;
-            z-index: 1;
-        }
-    }
-}
+@import "./components/webinar";
 
 // SECTION
 @import "./layout/section";
-
-.wife-school {
-    &__title {
-        color: #000;
-        font: bold 43px/55px "Open Sans";
-    }
-
-    &__text {
-        color: #000;
-        font: 400 18px/25px "Open Sans";
-    }
-}
 
 // FEATURES
 @import "./components/feature";
@@ -283,85 +217,22 @@ p {
 @import "./components/course-structure";
 
 // IRP
-.irp-hero {
-    &-img {
-        display: block;
-        margin: 0 auto;
-        height: 370px;
-        width: 275px;
-    }
-
-    &-title {
-        color: #000;
-        font-size: 45px;
-        font-family: "Wichita";
-        text-transform: uppercase;
-        margin: 0 0 5px;
-    }
-
-    &-text {
-        color: #000;
-        font-family: "Open Sans";
-        font-size: 16px;
-        line-height: 25px;
-        margin: 0 0 30px;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-}
+@import "./components/irp-hero";
 
 // WIFE SCHOOL
+@import "./components/wife-school";
 
 // LIST
-.list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-content: center;
-    align-items: center;
-    height: auto;
-    width: 100%;
-
-    &-item {
-        flex: 0 360px;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-
-        &__img {
-            margin-bottom: 20px;
-            height: 200px;
-        }
-
-        &__text {
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-            flex: 0 80px;
-            margin: 0;
-        }
-    }
-
-}
+@import "./components/list";
 
 // FORM
 @import "./components/form";
 
+// FOOTER
 @import "./layout/footer";
+
+// SOCIAL LIST
 @import "./components/social-list";
-// MEDIA GOES HERE
-
-// @media (max-width: $tablet) {
-
-//     // auth
-// }
 
 @media (max-width: $phone) {
     .header {

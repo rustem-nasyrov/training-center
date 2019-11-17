@@ -1,0 +1,70 @@
+.webinar {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+
+    &-head {
+        flex: 0 auto;
+        margin: 20px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    &-body {
+        background: #fff;
+        box-shadow: -1.117px 31.981px 68px 0px rgba(0, 0, 0, 0.1);
+        flex: 0 370px;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    &-preview {
+        display: block;
+        width: 100%;
+    }
+
+    &__text {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    &-link {
+        background: transparent;
+        position: relative;
+        color: #fff;
+        margin: 10px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            bottom: -10px;
+            left: -10px;
+            background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjA2IiBoZWlnaHQ9IjM3IiB2aWV3Qm94PSIwIDAgMjA2IDM3IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy4yNSA1LjkyMTk5TDE5NC4wOTYgMC40NjM5ODlMMjA2IDM3SDBMNy4yNSA1LjkyMTk5WiIgZmlsbD0iI0JFQzk0MSIvPjwvc3ZnPg==) center center/contain no-repeat transparent;
+            z-index: 0;
+        }
+
+
+        &__text {
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .webinar {
+        margin-bottom: 50px;
+
+        &-body {
+            flex: 0 auto;
+            max-width: 540px;
+        }
+    }
+}

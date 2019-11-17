@@ -1,0 +1,29 @@
+.profile {
+    &-head {
+        background: #f1f1f1;
+        border-radius: 10px;
+        padding: 12px 20px;
+        margin: 50px 0 30px;
+
+        &__text {
+            padding: 20px 0;
+            line-height: 1;
+        }
+    }
+
+    &-body {
+        margin: 30px 0 60px;
+    }
+}
+
+@media (max-width: $tablet) {
+    .profile {
+        &-head {
+            padding: 6px 10px;
+
+            &__text {
+                white-space: nowrap;
+            }
+        }
+    }
+}

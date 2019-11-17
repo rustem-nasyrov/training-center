@@ -1,0 +1,25 @@
+.wife-school {
+    &__title {
+        color: #000;
+        font: bold 43px/55px "Open Sans";
+    }
+
+    &__text {
+        color: #000;
+        font: 400 18px/25px "Open Sans";
+    }
+}
+
+@media (max-width: $tablet) {
+    .wife-school {
+        &__title {
+            font-size: 23px;
+            line-height: 30px;
+        }
+
+        &__text {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+}

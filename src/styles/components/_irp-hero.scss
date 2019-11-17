@@ -1,0 +1,53 @@
+.irp-hero {
+    &-img {
+        display: block;
+        margin: 0 auto;
+        height: 370px;
+        width: 275px;
+
+        source,
+        img {
+            height: inherit;
+            width: inherit;
+        }
+    }
+
+    &-title {
+        color: #000;
+        font-size: 45px;
+        font-family: "Wichita";
+        text-transform: uppercase;
+        margin: 0 0 5px;
+    }
+
+    &-text {
+        color: #000;
+        font-family: "Open Sans";
+        font-size: 16px;
+        line-height: 25px;
+        margin: 0 0 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .irp-hero {
+        &-img {
+            height: auto;
+            width: 230px;
+        }
+
+        &-title {
+            font-size: 30px;
+            line-height: 45px;
+        }
+
+        &-text {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+}

@@ -41,15 +41,18 @@
     }
 
     &--wife-school {
-        background: url("../img/wife-school.png") center center/cover no-repeat transparent;
-        // min-height: 720px;
+        background: url("../img/wife-school.jpg") center center/cover no-repeat transparent;
         height: 720px;
     }
 
     &--wife-school-descr {
-        // min-height: 550px;
         height: 550px;
         background: url("../img/young-couple.png") left bottom/contain no-repeat transparent;
+
+        .container,
+        .row {
+            height: auto;
+        }
     }
 
     &--conflict-types-count {
@@ -80,11 +83,19 @@
     }
 
     &--psycho-anno {
-        background: url("../img/women.png") 397px bottom/349px no-repeat transparent;
+        background: url("../img/women.png") 20% bottom/349px no-repeat transparent;
         height: 511px;
 
         p {
             padding-left: 30px;
+        }
+
+        .container {
+            height: auto;
+        }
+
+        .row {
+            height: auto;
         }
     }
 }
@@ -92,6 +103,49 @@
 @media (max-width: $tablet) {
     .section {
         padding: 15px 0;
+
+        &--wife-school {
+            height: 377px;
+        }
+
+        &--wife-school-descr {
+            background: url("../img/young-couple.png") left bottom/200px no-repeat transparent;
+            height: 440px;
+
+            .container:last-child {
+                height: 325px;
+
+                .row {
+                    height: inherit;
+                    ;
+                }
+            }
+        }
+
+        &--hero {
+            height: auto;
+        }
+
+        &--irp-faq {
+            padding: 30px 0 15px;
+        }
+
+        &--tutor {
+            background: linear-gradient(to top, #f7f7f7 194px, #fff 194px, #fff) transparent;
+        }
+
+        &--psycho-anno {
+            background: url("../img/women.png") 60px bottom/240px no-repeat transparent;
+            height: auto;
+
+            p {
+                padding-left: 30px;
+            }
+        }
+
+        &--conflict-types-count {
+            height: auto;
+        }
     }
 }
 
