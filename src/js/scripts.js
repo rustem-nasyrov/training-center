@@ -37,6 +37,7 @@ $(function () {
     }).on('focusout', function () {
         $(this).parent().removeClass('form-item--active');
     });
+    // reviews slider
     $('.reviews-slider').slick({
         slidesToShow: 3,
         slidesToScroll: 3,
@@ -50,13 +51,16 @@ $(function () {
             },
         },],
     });
-    $('.psycho-slider').slick({
-        autoplay: true,
-        delay: 3000,
-        dots: false,
-        slidesToShow: 1,
-        arrows: true,
-        prevArrow: $('.psycho-slider-controls__prev'),
-        nextArrow: $('.psycho-slider-controls__next'),
-    });
+    // psycho page slider
+    if ($(document.body).width() > 1024) {
+        $('.psycho-slider').slick({
+            autoplay: true,
+            delay: 3000,
+            dots: false,
+            slidesToShow: 1,
+            arrows: true,
+            prevArrow: $('.psycho-slider-controls__prev'),
+            nextArrow: $('.psycho-slider-controls__next'),
+        });
+    }
 });
