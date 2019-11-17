@@ -1,0 +1,107 @@
+.course-structure {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    list-style: none;
+
+    &__item {
+        height: 258px;
+        width: 258px;
+        flex: 0 258px;
+        border: 1px solid #e8e8e8;
+        padding: 49px;
+        text-align: center;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+
+        &:hover {
+            background: #f7f7f7;
+        }
+
+        &:nth-child(odd) .course-structure-num::after {
+            display: block;
+            transform: perspective(2000px) rotateY(30deg) skewX(10deg) translate(-50%, -50%);
+        }
+
+        &:nth-child(even) .course-structure-num::after {
+            display: block;
+            transform: perspective(3000px) rotateY(-30deg) skewX(-10deg) translate(-70%, -50%);
+        }
+    }
+
+    &-num {
+        flex: 0 121px;
+        margin-bottom: 20px;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 130px;
+            width: 130px;
+            transform-origin: 50% 50%;
+            perspective-origin: 50% 50%;
+            background: $main-color;
+            display: none;
+        }
+
+        &__text {
+            font: 600 150px/121px "Wichita";
+            position: relative;
+            z-index: 1;
+            color: #fff;
+        }
+    }
+
+    &__text {
+        font-size: 18px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+}
+
+
+@media (max-width: $tablet) {
+    .course-structure {
+        flex-flow: row wrap;
+        justify-content: space-around;
+        margin: 0 auto;
+        max-width: 500px;
+
+        &__item {
+            height: 200px;
+            width: 200px;
+            flex: 0 200px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        &-num {
+            flex: 0 80px;
+            margin-bottom: 10px;
+
+            &::after {
+                height: 100px;
+                width: 100px;
+            }
+
+            &__text {
+                font-size: 118px;
+                line-height: 80px;
+            }
+        }
+
+        &__text {
+            font-size: 14px;
+        }
+    }
+}

@@ -1,0 +1,92 @@
+.form {
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    height: auto;
+    width: 100%;
+
+    &-send-btn {
+        background: $main-color;
+        border: 0;
+        max-width: 550px;
+        width: 100%;
+        cursor: pointer;
+
+        &__text {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            padding: 19px 50px;
+            text-align: center;
+        }
+
+        &--skewed {
+            transform: skewX(45deg);
+
+            .form-send-btn__text {
+                display: inline-block;
+                transform: skewX(-45deg);
+            }
+        }
+
+    }
+
+    &-item {
+        flex: 0 60px;
+        background: #F7F7F7;
+        border: 2px solid #E2E2E2;
+        max-width: 550px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+        overflow: hidden;
+
+        &__input {
+            background: transparent;
+            height: 100%;
+            font-size: 16px;
+            color: #000;
+            font-weight: bold;
+            text-align: left;
+            padding: 19px 50px;
+            width: 100%;
+            border: 0;
+            outline: none;
+
+            &::placeholder {
+                color: #c5c5c5;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &--skewed {
+            transform: skewX(45deg);
+
+            &>* {
+                transform: skewX(-45deg);
+            }
+        }
+
+        &--active {
+            background: #fff;
+            border-color: $main-color;
+            box-shadow: 0 0 32px rgba(0, 0, 1, 0.1);
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .form-send-btn {
+        max-width: 470px;
+    }
+
+    .form-item {
+        max-width: 470px;
+    }
+}

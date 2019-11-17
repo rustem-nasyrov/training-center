@@ -14,8 +14,6 @@
         text-align: center;
     }
 
-    // &-form-container {}
-
     &-form {
         display: flex;
         flex-flow: row nowrap;
@@ -87,7 +85,7 @@
     }
 
     .mailing {
-        background: linear-gradient(to bottom, #fff 200px, #f7f7f7 200px);
+        background: linear-gradient(to bottom, #fff 200px, #f7f7f7 200px, #f7f7f7 90%, #fff 90%);
         height: auto;
         padding: 0 15px 34px;
 

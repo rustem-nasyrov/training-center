@@ -76,3 +76,19 @@
         }
     }
 }
+
+@media (max-width: $tablet) {
+    .pagination {
+        &__item {
+            flex: 0 34px;
+            height: 34px;
+        }
+
+        &__link {
+            height: 34px;
+            width: 34px;
+            line-height: 30px;
+            font-size: 13px;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+.plan-list {
+    list-style: none;
+    display: grid;
+    grid-template: 66px/1fr 1fr 1fr;
+    grid-gap: 60px 40px;
+    counter-reset: plan-list-counter;
+    padding: 0;
+    margin: 50px 0;
+    width: 100%;
+
+    &__item {
+        counter-increment: plan-list-counter;
+        position: relative;
+        padding-left: 64px;
+
+        &::before {
+            content: counter(plan-list-counter);
+            background: #fff;
+            display: inline-block;
+            border-radius: 50%;
+            text-align: center;
+            font: 600 45px/50px "Wichita";
+            color: $main-color;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            height: 51px;
+            width: 51px;
+        }
+    }
+
+    &__text {
+        color: #000000;
+        font: 400 16px/25px "Open Sans";
+    }
+}
+
+@media (max-width: 768px) {
+    .plan-list {
+        grid-template: 1fr/1fr 1fr;
+        grid-gap: 30px 40px;
+        // grid-template-areas: "item item
+        // center center";
+
+
+        // &__item {
+        //     &--align-center {
+        //         grid-area: center;
+        //         place-self: center;
+        //         width: 100%;
+        //     }
+        // }
+
+        &__text {
+            font-size: 14px;
+            line-height: 21px;
+        }
+    }
+}

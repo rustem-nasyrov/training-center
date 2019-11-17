@@ -1,0 +1,99 @@
+.section {
+    padding: 30px 0;
+
+    .container {
+        height: inherit;
+    }
+
+    .row {
+        height: inherit;
+    }
+
+    &__hero-img {
+
+        img,
+        source {
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    &--img {
+        padding: 0;
+    }
+
+    &--dark {
+        background: #f7f7f7;
+    }
+
+    &--hero {
+        // min-height: 490px;
+        padding: 0;
+        height: 490px;
+
+        .container {
+            height: inherit;
+        }
+
+        .row {
+            height: inherit;
+        }
+    }
+
+    &--wife-school {
+        background: url("../img/wife-school.png") center center/cover no-repeat transparent;
+        // min-height: 720px;
+        height: 720px;
+    }
+
+    &--wife-school-descr {
+        // min-height: 550px;
+        height: 550px;
+        background: url("../img/young-couple.png") left bottom/contain no-repeat transparent;
+    }
+
+    &--conflict-types-count {
+        height: 296px;
+        // min-height: 296px;
+        padding: 0;
+    }
+
+    &--tutor {
+        padding-bottom: 0;
+        height: auto;
+        overflow: hidden;
+        background: linear-gradient(to top, #f7f7f7 164px, #fff 164px, #fff) transparent;
+
+        .container.container--introduce {
+            // min-height: 336px;
+            margin-bottom: 30px;
+        }
+
+        .container.container-fluid {
+            max-width: none;
+        }
+
+        .container.container--introduce-point {
+            height: 164px;
+            // background: #f7f7f7;
+        }
+    }
+
+    &--psycho-anno {
+        background: url("../img/women.png") 397px bottom/349px no-repeat transparent;
+        height: 511px;
+
+        p {
+            padding-left: 30px;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .section {
+        padding: 15px 0;
+    }
+}
+
+// SECTION TITLE
+@import "./components/section-title";
