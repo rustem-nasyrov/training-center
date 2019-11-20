@@ -7,7 +7,7 @@ $(function () {
         nextArrow: $('.slider-btn-next'),
     });
     $('.slider-paging__current').text($(
-        '.slider-item:not(.slick-cloned)')
+            '.slider-item:not(.slick-cloned)')
         .index());
     $('.slider-paging__total').text($(
         '.slider-item:not(.slick-cloned)').length);
@@ -26,7 +26,7 @@ $(function () {
     });
     $(window).on('scroll', function () {
         let scroll = $(window).scrollTop();
-        if (scroll > 50)
+        if (scroll > 50 && document.body.offsetHeight > 1200)
             $('.header').addClass('header--fixed');
         else
             $('.header').removeClass('header--fixed');
@@ -49,7 +49,13 @@ $(function () {
                 slidesToShow: 2,
                 slidesToScroll: 2,
             },
-        },],
+        }, {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            }
+        }],
     });
     // psycho page slider
     if ($(document.body).width() > 1024) {
