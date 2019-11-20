@@ -41,8 +41,15 @@
     }
 
     &--wife-school {
-        background: url("../img/wife-school.jpg") center center/cover no-repeat transparent;
+        // background: url("../img/wife-school.jpg") center center/cover no-repeat transparent;
         height: 720px;
+
+        picture {
+
+            img {
+                width: 100%;
+            }
+        }
     }
 
     &--wife-school-descr {
@@ -170,6 +177,20 @@
 
         &--wife-school {
             height: auto;
+
+            .row {
+                flex-flow: column nowrap;
+            }
+
+            .col-6 {
+                flex: 1;
+                max-width: none;
+                width: 100%;
+            }
+
+            picture img {
+                margin: 20px auto 0;
+            }
         }
 
         &--wife-school-descr {
