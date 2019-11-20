@@ -25,5 +25,25 @@
                 white-space: nowrap;
             }
         }
+
+        &-body {
+            flex-flow: column nowrap;
+        }
+    }
+}
+
+@media (max-width: $phone) {
+    .profile {
+        &-head {
+            padding: 6px 10px;
+
+            &__text {
+                white-space: normal;
+            }
+        }
+
+        &-body {
+            flex-flow: column nowrap;
+        }
     }
 }

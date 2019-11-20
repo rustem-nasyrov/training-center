@@ -86,3 +86,15 @@
         }
     }
 }
+
+@media (max-width: $phone) {
+    .features {
+        grid-template: 1fr/1fr;
+    }
+
+    .feature-card {
+        justify-content: center;
+        width: 90%;
+        margin: 0 auto;
+    }
+}

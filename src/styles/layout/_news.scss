@@ -76,5 +76,15 @@
         }
     }
 }
-
+@media (max-width: $phone) {
+    .news {
+        &-container {
+            grid-template: 200px/1fr;
+            &--has-lead {
+                grid-template: 230px/1fr;
+                grid-template-areas: "small";
+            }
+        }
+    }
+}
 @import "../components/news-box";

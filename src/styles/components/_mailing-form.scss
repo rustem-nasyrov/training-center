@@ -89,12 +89,32 @@
         height: auto;
         padding: 0 15px 34px;
 
-        // &-form {}
-
         &__title,
         &__text {
             width: 75%;
             margin: 0 auto
+        }
+    }
+}
+
+
+@media (max-width: $phone) {
+    .mailing-form {
+        &-item {
+            &__input {
+                padding: 24px 20px;
+                width: 100%;
+            }
+        }
+    }
+
+    .mailing-picture {
+        text-align: center;
+
+        picture source,
+        picture img {
+            display: inline-block;
+            width: 100%;
         }
     }
 }

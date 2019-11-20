@@ -275,6 +275,13 @@
     }
 }
 
+@media (max-width: $phone) {
+    .psycho-slider-item-preview img {
+        height: auto;
+        width: 100%;
+    }
+}
+
 .psycho-slider-controls {
     text-align: center;
     width: 100%;

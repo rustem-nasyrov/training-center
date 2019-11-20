@@ -29,6 +29,8 @@
         border: 8px solid $main-color;
         margin-bottom: 38px;
         position: relative;
+        border-radius: 50%;
+        overflow: hidden;
 
         picture {
             display: inline-block;
@@ -40,30 +42,30 @@
             source,
             img {
                 width: inherit;
-                height: inherit;
+                height: auto;
             }
         }
 
-        &--tutor {
-            position: relative;
+        // &--tutor {
+        //     position: relative;
 
-            picture {
-                position: absolute;
-                overflow: visible;
-                left: -1px;
-                bottom: -1px;
-                right: -1px;
-                top: -30px;
-                height: calc(100% + 30px);
-                // height: 263px;
-                // width: 101%;
+        //     picture {
+        //         position: absolute;
+        //         overflow: visible;
+        //         left: -1px;
+        //         bottom: -1px;
+        //         right: -1px;
+        //         top: -30px;
+        //         height: calc(100% + 30px);
+        //         height: 263px;
+        //         width: 101%;
 
-                source,
-                img {
-                    height: 100%;
-                }
-            }
-        }
+        //         source,
+        //         img {
+        //             height: 100%;
+        //         }
+        //     }
+        // }
     }
 
     &__link {
@@ -81,7 +83,7 @@
     &:hover,
     &:focus {
         .course-preview {
-            box-shadow: 0px 0px 68px 0px rgba(99, 99, 99, 0.33);
+            box-shadow: 0px 0px 34px 0px rgba(99, 99, 99, 0.33);
         }
 
         .course__link {
@@ -95,12 +97,19 @@
         height: auto;
         padding-top: 55px;
     }
+
     .course {
         &-preview {
             height: 144px;
             width: 144px;
             flex: 0 144px;
         }
+    }
+}
+
+@media (max-width: $phone) {
+    .courses .row {
+        flex-flow: column nowrap;
     }
 }
 

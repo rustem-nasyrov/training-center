@@ -51,3 +51,12 @@
         }
     }
 }
+
+@media (max-width: $phone) {
+    .irp-hero {
+        &-img {
+            display: inline-block;
+            margin: 0 auto;
+        }
+    }
+}

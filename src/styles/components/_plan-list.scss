@@ -58,3 +58,9 @@
         }
     }
 }
+
+@media (max-width: $phone) {
+    .plan-list {
+        grid-template: 1fr/1fr;
+    }
+}

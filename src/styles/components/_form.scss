@@ -90,3 +90,11 @@
         max-width: 470px;
     }
 }
+
+@media (max-width: $phone) {
+
+    .form-item,
+    .form-send-btn {
+        max-width: 80%;
+    }
+}
