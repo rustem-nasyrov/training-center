@@ -62,7 +62,7 @@
     }
 }
 
-@media (max-width: $tablet) {
+@media screen and (max-width: $tablet) {
     .header {
         background: transparent;
         box-shadow: none;
